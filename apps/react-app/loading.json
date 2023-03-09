@@ -1,0 +1,9 @@
+{
+  "root": {
+    "id": "root",
+    "name": "root",
+    "isDir": true,
+    "childrenIds": ["34308fe0264f"]
+  },
+  "34308fe0264f": null
+}

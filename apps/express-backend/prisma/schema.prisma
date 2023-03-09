@@ -1,0 +1,49 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id    Int    @id @default(autoincrement())
+  email String @unique
+  plan  String @default("free")
+  files File[]
+}
+
+model File {
+  id            String   @id @default(cuid())
+  rootFolder    Boolean  @default(false)
+  name          String
+  isDir         Boolean  @default(false)
+  isHidden      Boolean  @default(false)
+  isSymlink     Boolean  @default(false)
+  isEncrypted   Boolean  @default(false)
+  openable      Boolean  @default(true)
+  selectable    Boolean  @default(true)
+  draggable     Boolean  @default(true)
+  droppable     Boolean  @default(true)
+  size          Int
+  modDate       DateTime @default(now())
+  childrenCount Int      @default(0)
+  color         String?
+  icon          String?
+  thumbnailUrl  String?
+  parent        File?    @relation("FileToParent", fields: [parentId], references: [id])
+  parentId      String?
+  children      File[]   @relation("FileToParent")
+  childrenIds   String[] @default([])
+
+  // In case we want to pass custom data
+  metadata Json?
+
+  // User
+  email String
+  user  User   @relation(fields: [email], references: [email])
+
+  // s3
+  s3Key String
+}

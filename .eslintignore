@@ -1,0 +1,8 @@
+node_modules
+dist
+build
+*.tsbuildinfo
+*.gitignore
+*.svg
+*.lock
+*.npmignore
