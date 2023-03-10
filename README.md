@@ -4,7 +4,7 @@
 
 At the moment we aim to be a cutting-edge service that provides anonymous and secure cloud storage, with a strong focus on end-to-end encryption and user privacy. We also want to run on the Tor network to ensures that your identity stays anonymous and your data is protected from prying eyes and potential hackers.
 
-## Instalation
+## Installation
 
 1. Clone the repo to your machine.
 2. Add .env file with the following variable:
