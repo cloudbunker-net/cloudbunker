@@ -1,6 +1,9 @@
+// ? We may convert these into import statements
+// ? but I think we have some problems with that
 const jwks = require('jwks-rsa');
 const { expressjwt: jwt } = require('express-jwt');
 
+// Verify JWT sent by the user
 export const verifyJWT = jwt({
 	secret: jwks.expressJwtSecret({
 		cache: true,

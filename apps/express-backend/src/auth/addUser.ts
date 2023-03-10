@@ -17,6 +17,11 @@ async function addUser(req: any, res: Response, next: NextFunction) {
 				email: user.email,
 			},
 		});
+		// Here we pass the database user as req.localUser
+		// so we can access it later in the API endpoints
+		// ! Notice, auth0 user and local user are not the same
+		// they do share the same information, but they are stored in
+		// different places
 		req.localUser = newUser;
 	} else {
 		req.localUser = localUser;

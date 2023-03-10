@@ -1,21 +1,34 @@
-import './css/style.css';
-import 'react-loading-skeleton/dist/skeleton.css';
-
 import React, { useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 
+// Global styles
+import './css/style.css';
+
+// ? Will most likely need to be removed, it was intended
+// ? for skeleton loader, but Chonky has its own skeleton loaders
+import 'react-loading-skeleton/dist/skeleton.css';
+
+// Chonky imports
 import { ChonkyIconFA } from 'chonky-icon-fontawesome';
+import { setChonkyDefaults } from 'chonky';
+
+// All of the pages app uses
 import MyFiles from './pages/my-files';
-import PageNotFound from './utility/PageNotFound';
-import Settings from './pages/settings';
 import Shared from './pages/shared';
 import Starred from './pages/starred';
-import { setChonkyDefaults } from 'chonky';
+import Settings from './pages/settings';
+
+// Authentication
 import { useAuth0 } from '@auth0/auth0-react';
 
+// ! Not used anywhere, not sure if we need this
+import PageNotFound from './utility/PageNotFound';
+
 function App() {
-	const location = useLocation();
 	const { isLoading, user, loginWithRedirect } = useAuth0();
+
+	const location = useLocation();
+
 	setChonkyDefaults({ iconComponent: ChonkyIconFA });
 
 	useEffect(() => {
@@ -26,6 +39,7 @@ function App() {
 
 	return (
 		<>
+			{/* In case user is not logged in, we give button to get authorized */}
 			{!isLoading && !user && (
 				<>
 					<p className="text-sm text-black m-5">Welcome to the Cloudbunker!</p>
@@ -39,6 +53,7 @@ function App() {
 					</button>
 				</>
 			)}
+			{/* If user have logged in we display the app */}
 			{!isLoading && user && (
 				<>
 					<Routes>

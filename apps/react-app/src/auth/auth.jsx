@@ -1,7 +1,11 @@
-import { Auth0Provider } from '@auth0/auth0-react';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import { Auth0Provider } from '@auth0/auth0-react';
+
+// Authorization with history
+// * We have a problem with authentication not being
+// * when user reloads, we should solve that
 export const AuthProvider = ({ children }) => {
 	const history = useNavigate();
 

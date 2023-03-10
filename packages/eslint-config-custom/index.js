@@ -1,6 +1,7 @@
 module.exports = {
-  extends: ["turbo", "prettier"],
-  rules: {
-    "@next/next/no-html-link-for-pages": "off",
-  },
+	extends: ['airbnb', 'turbo', 'prettier'],
+	rules: {
+		'@next/next/no-html-link-for-pages': 'off',
+	},
+	parser: 'babel-eslint',
 };
