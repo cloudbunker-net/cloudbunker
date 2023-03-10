@@ -1,0 +1,23 @@
+
+> ui@0.0.0 lint C:\Users\user\repos\cloudbunker\packages\ui
+> eslint *.ts*
+
+
+Oops! Something went wrong! :(
+
+ESLint: 7.32.0
+
+Error: Failed to load parser 'babel-eslint' declared in '..\..\.eslintrc.js » eslint-config-custom': Cannot find module 'babel-eslint'
+Require stack:
+- C:\Users\user\repos\cloudbunker\packages\eslint-config-custom\index.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1075:15)
+    at Function.resolve (node:internal/modules/cjs/helpers:116:19)
+    at Object.resolve (C:\Users\user\repos\cloudbunker\node_modules\.pnpm\@eslint+eslintrc@0.4.3\node_modules\@eslint\eslintrc\lib\shared\relative-module-resolver.js:28:50)
+    at ConfigArrayFactory._loadParser (C:\Users\user\repos\cloudbunker\node_modules\.pnpm\@eslint+eslintrc@0.4.3\node_modules\@eslint\eslintrc\lib\config-array-factory.js:929:45)
+    at ConfigArrayFactory._normalizeObjectConfigDataBody (C:\Users\user\repos\cloudbunker\node_modules\.pnpm\@eslint+eslintrc@0.4.3\node_modules\@eslint\eslintrc\lib\config-array-factory.js:724:43)
+    at _normalizeObjectConfigDataBody.next (<anonymous>)
+    at ConfigArrayFactory._normalizeObjectConfigData (C:\Users\user\repos\cloudbunker\node_modules\.pnpm\@eslint+eslintrc@0.4.3\node_modules\@eslint\eslintrc\lib\config-array-factory.js:665:20)
+    at _normalizeObjectConfigData.next (<anonymous>)
+    at ConfigArrayFactory._normalizeObjectConfigDataBody (C:\Users\user\repos\cloudbunker\node_modules\.pnpm\@eslint+eslintrc@0.4.3\node_modules\@eslint\eslintrc\lib\config-array-factory.js:720:25)
+    at _normalizeObjectConfigDataBody.next (<anonymous>)
+ ELIFECYCLE  Command failed with exit code 2.

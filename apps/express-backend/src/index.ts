@@ -1,24 +1,30 @@
-import { addUser } from "./auth/addUser";
-import cors from "cors";
-import express from "express";
-import { rootFolderCreate } from "./auth/rootFolder";
-import { router } from "./router";
-import { userContext } from "./auth/userContext";
-import { verifyJWT } from "./auth";
+import cors from 'cors';
+import express, { Application } from 'express';
 
-const app = express();
+import { router } from './router';
+import { addUser } from './auth/addUser';
+import { verifyJWT } from './auth';
+import { userContext } from './auth/userContext';
+import { rootFolderCreate } from './auth/rootFolder';
+
+const app: Application = express();
+
+// * Order of the middlewears should be preserved
+// * userContext -> addUser -> rootFolderCreate
 
 // Middlewares
 app.use(express.json());
 app.use(cors());
 app.use(verifyJWT);
-app.use(userContext); // run after verifyJWT
-app.use(addUser); // run after userContext
-app.use(rootFolderCreate); // run after addUser
+app.use(userContext);
+// Creating user in database on the first login
+app.use(addUser);
+// Creating root folder in the database on the first login
+app.use(rootFolderCreate);
 
 // Routes
-app.use("/api", router);
+app.use('/api', router);
 
-app.listen(3000, () => console.log("Server started on port 3000"));
+app.listen(3000, () => console.log('Server started on port 3000'));
 
 export { app };

@@ -1,0 +1,21 @@
+
+> react-app@0.1.0 build C:\Users\user\repos\cloudbunker\apps\react-app
+> vite build
+
+[36mvite v4.1.4 [32mbuilding for production...[36m[39m
+transforming...
+Module level directives cause errors when bundled, "use client" in "../../node_modules/.pnpm/react-loading-skeleton@3.2.0_react@18.2.0/node_modules/react-loading-skeleton/dist/index.mjs" was ignored.
+[32m✓[39m 755 modules transformed.
+rendering chunks...
+computing gzip size...
+[2mdist/[22m[32mindex.html                            [39m[1m[2m  0.84 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32mfavicon-63a26457.svg           [39m[1m[2m  1.54 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32m404-illustration-a20d59b6.svg  [39m[1m[2m  4.70 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[32mlogo-6f5025b8.webp             [39m[1m[2m581.94 kB[22m[1m[22m
+[2mdist/[22m[2massets/[22m[35mindex-eb682f88.css             [39m[1m[2m 57.38 kB[22m[1m[22m[2m │ gzip:  10.36 kB[22m
+[2mdist/[22m[2massets/[22m[36mindex-75191af7.js              [39m[1m[33m854.34 kB[39m[22m[2m │ gzip: 252.92 kB[22m
+[33m
+(!) Some chunks are larger than 500 kBs after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.[39m

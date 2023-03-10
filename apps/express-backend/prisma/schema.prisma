@@ -40,10 +40,10 @@ model File {
   // In case we want to pass custom data
   metadata Json?
 
-  // User
+  // Connecting email of the User
   email String
   user  User   @relation(fields: [email], references: [email])
 
-  // s3
+  // s3 path
   s3Key String
 }
