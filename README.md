@@ -1,8 +1,13 @@
 # Clodbunker
 
-## About
-
 At the moment we aim to be a cutting-edge service that provides anonymous and secure cloud storage, with a strong focus on end-to-end encryption and user privacy. We also want to run on the Tor network to ensures that your identity stays anonymous and your data is protected from prying eyes and potential hackers.
+
+- [ ] Decent design in the app.
+- [ ] Smooth, modern and nice user experience.
+- [ ] Fully functional, stylized file browser component.
+- [ ] Crypto payments.
+- [ ] Fully functional shared links(clearnet, darknet).
+- [ ] Settings integrated with the backend.
 
 ## Installation
 
